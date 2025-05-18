@@ -1,5 +1,6 @@
 from celery import Celery
 import os
+import ssl
 
 from core import config
 
