@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    restart: always
+
+  # web:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: streamlit run streamlit_app/app.py --server.port=8501 --server.enableCORS=false
+  #   ports:
+  #     - "8501:8501"
+  #   environment:
+  #     - PYTHONUNBUFFERED=1
+  #     - REDIS_URL=redis://redis:6379/0
+  #   volumes:
+  #     - .:/app
+  #   depends_on:
+  #     - redis
+
+  # worker:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: celery -A celery_worker worker --loglevel=info
+  #   environment:
+  #     - REDIS_URL=redis://redis:6379/0
+  #   volumes:
+  #     - .:/app
+  #   depends_on:
+  #     - redis

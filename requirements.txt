@@ -1,0 +1,9 @@
+streamlit
+celery[redis]
+python-dotenv
+amadeus
+pydantic
+requests
+redis
+python-dotenv
+tenacity # (for retry logic if needed)
