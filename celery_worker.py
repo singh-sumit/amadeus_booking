@@ -3,17 +3,17 @@ import os
 
 from core import config
 
-# celery = Celery(
-#     "worker",
-#     broker=config.REDIS_URL + '/0',
-#     backend=config.REDIS_URL +'/1',
-# )
-
 celery = Celery(
     "worker",
-    broker="redis://localhost:6379/0",
-    backend="redis://localhost:6379/1",  # ✅ Add this
+    broker=config.REDIS_URL,
+    backend=config.REDIS_URL,
 )
+
+# celery = Celery(
+#     "worker",
+#     broker="redis://localhost:6379/0",
+#     backend="redis://localhost:6379/1",  # ✅ Add this
+# )
 
 celery.conf.update(
     task_track_started=True,

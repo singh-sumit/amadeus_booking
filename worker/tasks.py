@@ -187,23 +187,7 @@ def hold_flight_offer(flight_offer_price_data: dict):
                                     "holder": True,
                                 }
                             ],
-                        },
-                        {
-                            "id": "2",
-                            "dateOfBirth": "2012-10-11",
-                            "gender": "FEMALE",
-                            "contact": {
-                                "emailAddress": "jorge.gonzales833@telefonica.es",
-                                "phones": [
-                                    {
-                                        "deviceType": "MOBILE",
-                                        "countryCallingCode": "34",
-                                        "number": "480080076",
-                                    }
-                                ],
-                            },
-                            "name": {"firstName": "ADRIANA", "lastName": "GONZALES"},
-                        },
+                        }
                     ],
                     "remarks": {
                         "general": [
