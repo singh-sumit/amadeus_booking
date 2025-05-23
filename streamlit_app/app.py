@@ -5,6 +5,7 @@
 import streamlit as st
 import sys
 import os
+import subprocess
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from streamlit_app.layout import build_layout
@@ -22,3 +23,7 @@ def main():
 if __name__ == "__main__":
     # This ensures that main() is called only when the script is executed directly
     main()
+    # Start Celery
+    celery_proc = subprocess.Popen(
+        ["celery", "-A", "celery_worker", "worker", "--loglevel=info"]
+    )
